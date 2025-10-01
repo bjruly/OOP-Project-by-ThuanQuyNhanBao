@@ -55,6 +55,7 @@ class Shirt extends Clothing implements Discountable {
     public void setSize(String size) {
         this.size = size;
     }
+    public String getSize() { return size; }
 
     @Override
     public void display() {
@@ -79,6 +80,7 @@ class Pants extends Clothing implements Discountable {
     public void setMaterial(String material) {
         this.material = material;
     }
+    public String getMaterial() { return material; }
 
     @Override
     public void display() {
@@ -103,6 +105,7 @@ class Jacket extends Clothing implements Discountable {
     public void setColor(String color) {
         this.color = color;
     }
+    public String getColor() { return color; }
 
     @Override
     public void display() {
@@ -149,7 +152,7 @@ class ClothingManager {
         return false;
     }
 
-    // Update (sửa toàn bộ thông tin)
+    // Update
     public boolean updateClothing(String id, String newName, double newPrice, String extra) {
         Clothing c = searchById(id);
         if (c != null) {
@@ -167,29 +170,44 @@ class ClothingManager {
         return false;
     }
 
-    // Save to file
+    // Save to file (ghi đủ thông tin)
     public void saveToFile(String filename) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
         for (Clothing c : list) {
-            writer.write(c.getClass().getSimpleName() + "," + c.getId() + "," + c.getName() + "," + c.getPrice());
+            if (c instanceof Shirt) {
+                Shirt s = (Shirt) c;
+                writer.write("Shirt," + s.getId() + "," + s.getName() + "," + s.getPrice() + "," + s.getSize());
+            } else if (c instanceof Pants) {
+                Pants p = (Pants) c;
+                writer.write("Pants," + p.getId() + "," + p.getName() + "," + p.getPrice() + "," + p.getMaterial());
+            } else if (c instanceof Jacket) {
+                Jacket j = (Jacket) c;
+                writer.write("Jacket," + j.getId() + "," + j.getName() + "," + j.getPrice() + "," + j.getColor());
+            }
             writer.newLine();
         }
         writer.close();
     }
 
-    // Load from file
+    // Load from file (đọc đủ thông tin)
     public void loadFromFile(String filename) throws IOException {
         list.clear();
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         String line;
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
-            if (data[0].equals("Shirt")) {
-                list.add(new Shirt(data[1], data[2], Double.parseDouble(data[3]), "M")); 
-            } else if (data[0].equals("Pants")) {
-                list.add(new Pants(data[1], data[2], Double.parseDouble(data[3]), "Cotton"));
-            } else if (data[0].equals("Jacket")) {
-                list.add(new Jacket(data[1], data[2], Double.parseDouble(data[3]), "Black"));
+            String type = data[0];
+            String id = data[1];
+            String name = data[2];
+            double price = Double.parseDouble(data[3]);
+            String extra = data[4];
+
+            if (type.equals("Shirt")) {
+                list.add(new Shirt(id, name, price, extra));
+            } else if (type.equals("Pants")) {
+                list.add(new Pants(id, name, price, extra));
+            } else if (type.equals("Jacket")) {
+                list.add(new Jacket(id, name, price, extra));
             }
         }
         reader.close();
