@@ -1,0 +1,22 @@
+public abstract class Clothing {
+    protected String id;
+    protected String name;
+    protected double price;
+    protected static int totalProducts = 0;
+    public Clothing(String id, String name, double price){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        totalProducts++;
+    }
+    public abstract void displayInfo();
+    public double getPrice() {
+        return this.price;
+    }
+    public String getName() {
+        return this.name;
+    }
+    public static int getTotalProducts() {
+        return totalProducts;
+    }
+}
