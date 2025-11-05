@@ -16,6 +16,9 @@ public abstract class Clothing {
     public String getName() {
         return this.name;
     }
+    public String getId() {
+        return this.id;
+    }
     public static int getTotalProducts() {
         return totalProducts;
     }
