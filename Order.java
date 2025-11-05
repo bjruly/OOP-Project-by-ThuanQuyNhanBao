@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 public class Order {
+    private String orderId;
     private Customer customer;
     private List<OrderDetail> details;
-    public Order(Customer customer){
+    public Order( String orderId,Customer customer){
+        this.orderId = orderId;
         this.customer = customer;
         this.details = new ArrayList<>();
     }
@@ -28,5 +30,16 @@ public class Order {
         System.out.println("---------------------------");
         System.out.println("Tốne tiền:" + this.getTotalPrice());
         System.out.println("---------------------------");
+    }
+    public String getOrderId() {
+        return this.orderId;
+    }
+
+    public Customer getCustomer() {
+        return this.customer;
+    }
+
+    public List<OrderDetail> getDetails() {
+        return this.details;
     }
 }
