@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerManager implements chucnang<Customer> {
-    private List<Customer> list = new ArrayList<>();
+public class CustomerManager implements chucnang<Customer> 
+{
+    private final List<Customer> list = new ArrayList<>();
 
     @Override
     public void add(Customer customer) 

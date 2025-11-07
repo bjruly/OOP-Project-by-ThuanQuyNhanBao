@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 public class ClothingManager implements chucnang<Clothing>
 {
-    private List<Clothing> list = new ArrayList<>();
+    private final List<Clothing> list = new ArrayList<>();
 
     @Override
     public void add(Clothing item) 
@@ -13,7 +13,7 @@ public class ClothingManager implements chucnang<Clothing>
     public Clothing searchById(String id) 
     {
         for (Clothing cl : list) {
-            if (cl.getClothingId().equals(id)) 
+            if (cl.getId().equals(id)) 
             {
                 return cl;
             }
@@ -23,7 +23,7 @@ public class ClothingManager implements chucnang<Clothing>
     @Override
     public boolean deleteById(String id) 
     {
-        return list.removeIf(cl -> cl.getClothingId().equals(id));
+        return list.removeIf(cl -> cl.getId().equals(id));
     }
     @Override
     public void displayAll() 

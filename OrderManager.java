@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderManager implements chucnang<Order> {
-    private List<Order> list = new ArrayList<>();
+    private final List<Order> list = new ArrayList<>();
 
     @Override
     public void add(Order order) {

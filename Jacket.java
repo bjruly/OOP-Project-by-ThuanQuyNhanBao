@@ -1,8 +1,8 @@
 public class Jacket extends Clothing implements Discountable {
-    private String color;
-    private String material;
-    private String size;
-    private int stock;
+    private final String color;
+    private final String material;
+    private final String size;
+    private final int stock;
     public Jacket(String id, String name, double price, String color, String material, String size, int stock){
         super(id, name, price);
         this.color = color;
