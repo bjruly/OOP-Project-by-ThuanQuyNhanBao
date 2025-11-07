@@ -1,0 +1,39 @@
+----Khách Hàng----
+Id: C001
+Số điện thoại: 0987654321
+
+----Khách Hàng----
+Id: C002
+Số điện thoại: 0912345678
+
+----Khách Hàng----
+Id: C003
+Số điện thoại: 0909123123
+
+----Khách Hàng----
+Id: C004
+Số điện thoại: 0978564321
+
+----Khách Hàng----
+Id: C005
+Số điện thoại: 0935123987
+
+----Khách Hàng----
+Id: C006
+Số điện thoại: 0967452310
+
+----Khách Hàng----
+Id: C007
+Số điện thoại: 0923456789
+
+----Khách Hàng----
+Id: C008
+Số điện thoại: 0945678123
+
+----Khách Hàng----
+Id: C009
+Số điện thoại: 0903456123
+
+----Khách Hàng----
+Id: C010
+Số điện thoại: 0989123456

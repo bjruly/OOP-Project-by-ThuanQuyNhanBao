@@ -1,0 +1,49 @@
+----Sản phẩm----
+ID: CL001
+Tên: Áo thun nam cotton
+Giá: 199000
+
+----Sản phẩm----
+ID: CL002
+Tên: Áo sơ mi tay dài
+Giá: 299000
+
+----Sản phẩm----
+ID: CL003
+Tên: Quần jean nữ lưng cao
+Giá: 399000
+
+----Sản phẩm----
+ID: CL004
+Tên: Váy hoa mùa hè
+Giá: 359000
+
+----Sản phẩm----
+ID: CL005
+Tên: Quần short kaki nam
+Giá: 249000
+
+----Sản phẩm----
+ID: CL006
+Tên: Áo khoác gió thể thao
+Giá: 499000
+
+----Sản phẩm----
+ID: CL007
+Tên: Áo hoodie unisex
+Giá: 459000
+
+----Sản phẩm----
+ID: CL008
+Tên: Quần tây công sở
+Giá: 379000
+
+----Sản phẩm----
+ID: CL009
+Tên: Váy công chúa bé gái
+Giá: 289000
+
+----Sản phẩm----
+ID: CL010
+Tên: Áo sơ mi caro nữ
+Giá: 319000
