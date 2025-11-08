@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 public class Order {
-    private String orderId;
-    private Customer customer;
-    private List<OrderDetail> details;
+    private final String orderId;
+    private final Customer customer;
+    private final List<OrderDetail> details;
     public Order( String orderId,Customer customer){
         this.orderId = orderId;
         this.customer = customer;
@@ -28,7 +28,7 @@ public class Order {
             detail.displayDetail();
         }
         System.out.println("---------------------------");
-        System.out.println("Tốne tiền:" + this.getTotalPrice());
+        System.out.println("Tổng tiền:" + this.getTotalPrice());
         System.out.println("---------------------------");
     }
     public String getOrderId() {
