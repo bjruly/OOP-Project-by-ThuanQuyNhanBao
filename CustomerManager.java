@@ -36,4 +36,16 @@ public class CustomerManager implements chucnang<Customer>
             System.out.println(c);
         }
     }
+    @Override
+    public boolean update(String id, Customer newItem) 
+    {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getCustomerId().equals(id)) 
+            {
+                list.set(i, newItem);
+                return true;
+            }
+        }
+        return false;
+    }
 }

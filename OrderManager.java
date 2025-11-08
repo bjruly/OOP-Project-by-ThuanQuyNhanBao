@@ -30,4 +30,14 @@ public class OrderManager implements chucnang<Order> {
             System.out.println(o);
         }
     }
+    @Override
+    public boolean update(String id, Order newItem) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getOrderId().equals(id)) {
+                list.set(i, newItem);
+                return true;
+            }
+        }
+        return false;
+    }
 }
