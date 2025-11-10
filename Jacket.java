@@ -1,3 +1,4 @@
+// Jacket.java - đã thêm getter methods
 public class Jacket extends Clothing implements Discountable {
     private final String color;
     private final String material;
@@ -10,16 +11,21 @@ public class Jacket extends Clothing implements Discountable {
         this.size = size;
         this.stock = stock;
     }
+    public String getColor() { return color; }
+    public String getMaterial() { return material; }
+    public String getSize() { return size; }
+    public int getStock() { return stock; }
+    
     @Override
     public void displayInfo(){
         System.out.println("----Áo Khoác----");
-        System.out.println("Id:" +this.id);
-        System.out.println("Tên:" +this.name);
-        System.out.println("Giá:" +this.price);
-        System.out.println("Màu:" +this.color);
-        System.out.println("Chất liệu:" +this.material);
-        System.out.println("Size:" +this.size);
-        System.out.println("Tồn kho:" +this.stock);
+        System.out.println("Id:" + this.id);
+        System.out.println("Tên:" + this.name);
+        System.out.println("Giá:" + this.price);
+        System.out.println("Màu:" + this.color);
+        System.out.println("Chất liệu:" + this.material);
+        System.out.println("Size:" + this.size);
+        System.out.println("Tồn kho:" + this.stock);
     }
     @Override
     public double getDiscountedPrice(double percent){

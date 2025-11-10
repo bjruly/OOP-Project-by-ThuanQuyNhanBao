@@ -1,3 +1,4 @@
+// Clothing.java - giữ nguyên
 public abstract class Clothing {
     protected String id;
     protected String name;

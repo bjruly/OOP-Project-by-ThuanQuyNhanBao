@@ -1,6 +1,6 @@
 public class OrderDetail {
-    private  Clothing item;
-    private int quantity;
+    private final Clothing item;
+    private final int quantity;
     public OrderDetail(Clothing item, int quantity){
         this.item = item;
         this.quantity = quantity;

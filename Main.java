@@ -65,11 +65,11 @@ public class Main {
                         sc.nextLine();
 
                         switch (c2) {
-                            case 1 -> customerManager.themTuBanPhim(sc);
-                            case 2 -> customerManager.displayAll();
-                            case 3 -> customerManager.timTheoId(sc);
-                            case 4 -> customerManager.xoaTheoId(sc);
-                            case 5 -> customerManager.suaTheoId(sc);
+                            case 1 -> CustomerManager.add(sc);
+                            case 2 -> CustomerManager.displayAll();
+                            case 3 -> CustomerManager.searchById(id)(sc);
+                            case 4 -> CustomerManager.deleteById(sc);
+                            case 5 -> CustomerManager.update(sc);
                         }
                     } while (c2 != 0);
                 }

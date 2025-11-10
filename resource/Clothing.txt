@@ -1,49 +1,95 @@
 ----Sản phẩm----
-ID: CL001
-Tên: Áo thun nam cotton
-Giá: 199000
+ID:J001
+Tên:Áo khoác da nam
+Giá:1200000
+Màu:Đen
+Chất liệu:Da
+Size:L
+Tồn kho:10
 
 ----Sản phẩm----
-ID: CL002
-Tên: Áo sơ mi tay dài
-Giá: 299000
+ID:J002
+Tên:Áo hoodie nữ
+Giá:850000
+Màu:Hồng
+Chất liệu:Nỉ
+Size:M
+Tồn kho:8
 
 ----Sản phẩm----
-ID: CL003
-Tên: Quần jean nữ lưng cao
-Giá: 399000
+ID:P001
+Tên:Quần jean nam
+Giá:650000
+Chất liệu:Jean
+Size:E32
+Chiều dài:34
+Thương hiệu:Levi's
+Tồn kho:15
 
 ----Sản phẩm----
-ID: CL004
-Tên: Váy hoa mùa hè
-Giá: 359000
+ID:P002
+Tên:Quần kaki nữ
+Giá:720000
+Chất liệu:Kaki
+Size:E30
+Chiều dài:32
+Thương hiệu:N&M
+Tồn kho:12
 
 ----Sản phẩm----
-ID: CL005
-Tên: Quần short kaki nam
-Giá: 249000
+ID:S001
+Tên:Áo sơ mi trắng
+Giá:480000
+Size:M
+Màu:Trắng
+Thương hiệu:Zara
+Giới tính:Nữ
+Tồn kho:20
 
 ----Sản phẩm----
-ID: CL006
-Tên: Áo khoác gió thể thao
-Giá: 499000
+ID:S002
+Tên:Áo sơ mi caro nam
+Giá:510000
+Size:L
+Màu:Xanh
+Thương hiệu:H&M
+Giới tính:Nam
+Tồn kho:18
 
 ----Sản phẩm----
-ID: CL007
-Tên: Áo hoodie unisex
-Giá: 459000
+ID:J003
+Tên:Áo khoác gió
+Giá:990000
+Màu:Xám
+Chất liệu:Vải dù
+Size:XL
+Tồn kho:5
 
 ----Sản phẩm----
-ID: CL008
-Tên: Quần tây công sở
-Giá: 379000
+ID:P003
+Tên:Quần short thể thao
+Giá:390000
+Chất liệu:Polyester
+Size:E31
+Chiều dài:28
+Thương hiệu:Adidas
+Tồn kho:25
 
 ----Sản phẩm----
-ID: CL009
-Tên: Váy công chúa bé gái
-Giá: 289000
+ID:S003
+Tên:Áo sơ mi công sở
+Giá:530000
+Size:M
+Màu:Xanh nhạt
+Thương hiệu:Canifa
+Giới tính:Nữ
+Tồn kho:14
 
 ----Sản phẩm----
-ID: CL010
-Tên: Áo sơ mi caro nữ
-Giá: 319000
+ID:J004
+Tên:Áo khoác bomber
+Giá:1100000
+Màu:Xanh rêu
+Chất liệu:Nylon
+Size:L
+Tồn kho:7
