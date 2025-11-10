@@ -5,11 +5,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
          
-        try {
-            System.setOut(new java.io.PrintStream(System.out, true, "UTF-8"));
-            System.setErr(new java.io.PrintStream(System.err, true, "UTF-8"));
-        } catch (java.io.UnsupportedEncodingException e) {           
-        }
         ClothingManager clothingManager = new ClothingManager();
         CustomerManager customerManager = new CustomerManager();
         OrderManager orderManager = new OrderManager(clothingManager, customerManager);
