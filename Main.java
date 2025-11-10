@@ -60,7 +60,28 @@ public class Main {
                     cm.displayAll();
                     break;
                 case "2":
-                    System.out.println("Nhập thông tin sản phẩm (ID,Tên,Giá,Size/Màu/Chất liệu,...)");
+                     System.out.print("Nhập ID đơn hàng: ");
+                    String orderId = sc.nextLine();
+                    System.out.print("Nhập ID khách hàng: ");
+                    String custId = sc.nextLine();
+                    Customer cust = custM.searchById(custId);
+                    if (cust == null) {
+                        System.out.println("Không tìm thấy khách hàng.");
+                        break;
+                    }
+                    Order order = new Order(orderId, cust);
+                    System.out.print("Nhập ID sản phẩm: ");
+                    String prodId = sc.nextLine();
+                    Clothing item = cm.searchById(prodId);
+                    if (item == null) {
+                        System.out.println("Không tìm thấy sản phẩm.");
+                        break;
+                    }
+                    System.out.print("Nhập số lượng: ");
+                    int qty = Integer.parseInt(sc.nextLine());
+                    order.addOrderDetail(item, qty);
+                    om.add(order);
+                    System.out.println("Đã thêm đơn hàng.");
                     break;
                 case "3":
                     System.out.print("Nhập ID sản phẩm cần xóa: ");
