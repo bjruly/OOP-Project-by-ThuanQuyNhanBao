@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,6 +112,55 @@ public class ClothingManager implements chucnang<Clothing> {
             System.out.println("✅ Đã nạp dữ liệu từ Clothing.txt (" + list.size() + " sản phẩm)");
         } catch (IOException e) {
             System.err.println("❌ Lỗi đọc file Clothing.txt: " + e.getMessage());
+        }
+    }
+
+    // Thêm phương thức xuất dữ liệu ra file input.txt
+    public void exportToFile() {
+        String filename = "resource/Clothing_output.txt";
+        
+        try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
+            for (int i = 0; i < list.size(); i++) {
+                Clothing clothing = list.get(i);
+                writer.println("----Sản phẩm----");
+                writer.println("ID:" + clothing.getId());
+                writer.println("Tên:" + clothing.getName());
+                writer.println("Giá:" + (int)clothing.getPrice()); // Làm tròn thành số nguyên
+                // Ghi thông tin cụ thể cho từng loại quần áo
+                switch (clothing) {
+                    case Jacket jacket -> {
+                        writer.println("Màu:" + jacket.getColor());
+                        writer.println("Chất liệu:" + jacket.getMaterial());
+                        writer.println("Size:" + jacket.getSize());
+                        writer.println("Tồn kho:" + jacket.getStock());
+                    }
+                    case Pants pants -> {
+                        writer.println("Chất liệu:" + pants.getMaterial());
+                        writer.println("Size:E" + pants.getWaist());
+                        writer.println("Chiều dài:" + pants.getLength());
+                        writer.println("Thương hiệu:" + pants.getBrand());
+                        writer.println("Tồn kho:" + pants.getStock());
+                    }
+                    case Shirt shirt -> {
+                        writer.println("Size:" + shirt.getSize());
+                        writer.println("Màu:" + shirt.getColor());
+                        writer.println("Thương hiệu:" + shirt.getBrand());
+                        writer.println("Giới tính:" + shirt.getGender());
+                        writer.println("Tồn kho:" + shirt.getStock());
+                    }
+                    default -> {
+                    }
+                }
+                
+                // Thêm dòng trống giữa các sản phẩm (trừ sản phẩm cuối cùng)
+                if (i < list.size() - 1) {
+                    writer.println();
+                }
+            }
+            
+            System.out.println("✅ Đã xuất dữ liệu ra file Clothing_output.txt (" + list.size() + " sản phẩm)");
+        } catch (IOException e) {
+            System.err.println("❌ Lỗi ghi file Clothing__output.txt: " + e.getMessage());
         }
     }
 

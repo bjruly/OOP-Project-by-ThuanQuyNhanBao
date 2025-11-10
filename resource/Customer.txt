@@ -1,39 +1,44 @@
-----Khách Hàng----
-Id: C001
-Số điện thoại: 0987654321
+----Khách hàng----
+ID:C001
+SĐT:0912345678
 
-----Khách Hàng----
-Id: C002
-Số điện thoại: 0912345678
+----Khách hàng----
+ID:C002
+SĐT:0923456789
+Điểm tích lũy:150
 
-----Khách Hàng----
-Id: C003
-Số điện thoại: 0909123123
+----Khách hàng----
+ID:C003
+SĐT:0934567890
 
-----Khách Hàng----
-Id: C004
-Số điện thoại: 0978564321
+----Khách hàng----
+ID:C004
+SĐT:0945678901
+Điểm tích lũy:75
 
-----Khách Hàng----
-Id: C005
-Số điện thoại: 0935123987
+----Khách hàng----
+ID:C005
+SĐT:0956789012
 
-----Khách Hàng----
-Id: C006
-Số điện thoại: 0967452310
+----Khách hàng----
+ID:C006
+SĐT:0967890123
+Điểm tích lũy:200
 
-----Khách Hàng----
-Id: C007
-Số điện thoại: 0923456789
+----Khách hàng----
+ID:C007
+SĐT:0978901234
 
-----Khách Hàng----
-Id: C008
-Số điện thoại: 0945678123
+----Khách hàng----
+ID:C008
+SĐT:0989012345
+Điểm tích lũy:300
 
-----Khách Hàng----
-Id: C009
-Số điện thoại: 0903456123
+----Khách hàng----
+ID:C009
+SĐT:0990123456
 
-----Khách Hàng----
-Id: C010
-Số điện thoại: 0989123456
+----Khách hàng----
+ID:C010
+SĐT:0901234567
+Điểm tích lũy:125

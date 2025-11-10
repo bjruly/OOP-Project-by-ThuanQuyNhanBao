@@ -1,59 +1,62 @@
-----Hóa đơn----
-Mã hóa đơn: O001
-Khách hàng: C001
-Sản phẩm: CL001
-Số lượng: 2
+----Đơn hàng----
+ID:O001
+Khách hàng:C001
+Sản phẩm:J001,Số lượng:1
+Sản phẩm:P001,Số lượng:2
 
-----Hóa đơn----
-Mã hóa đơn: O002
-Khách hàng: C002
-Sản phẩm: CL004
-Số lượng: 1
+----Đơn hàng----
+ID:O002
+Khách hàng:C002
+Sản phẩm:S001,Số lượng:3
+Sản phẩm:J002,Số lượng:1
 
-----Hóa đơn----
-Mã hóa đơn: O003
-Khách hàng: C003
-Sản phẩm: CL002
-Số lượng: 3
+----Đơn hàng----
+ID:O003
+Khách hàng:C003
+Sản phẩm:P002,Số lượng:2
+Sản phẩm:S002,Số lượng:1
 
-----Hóa đơn----
-Mã hóa đơn: O004
-Khách hàng: C004
-Sản phẩm: CL006
-Số lượng: 1
+----Đơn hàng----
+ID:O004
+Khách hàng:C004
+Sản phẩm:J003,Số lượng:1
+Sản phẩm:P003,Số lượng:1
+Sản phẩm:S003,Số lượng:2
 
-----Hóa đơn----
-Mã hóa đơn: O005
-Khách hàng: C005
-Sản phẩm: CL010
-Số lượng: 2
+----Đơn hàng----
+ID:O005
+Khách hàng:C005
+Sản phẩm:J004,Số lượng:1
+Sản phẩm:S001,Số lượng:1
 
-----Hóa đơn----
-Mã hóa đơn: O006
-Khách hàng: C006
-Sản phẩm: CL003
-Số lượng: 1
+----Đơn hàng----
+ID:O006
+Khách hàng:C006
+Sản phẩm:P001,Số lượng:3
+Sản phẩm:S002,Số lượng:2
 
-----Hóa đơn----
-Mã hóa đơn: O007
-Khách hàng: C007
-Sản phẩm: CL007
-Số lượng: 4
+----Đơn hàng----
+ID:O007
+Khách hàng:C007
+Sản phẩm:J002,Số lượng:2
+Sản phẩm:P002,Số lượng:1
 
-----Hóa đơn----
-Mã hóa đơn: O008
-Khách hàng: C008
-Sản phẩm: CL005
-Số lượng: 2
+----Đơn hàng----
+ID:O008
+Khách hàng:C008
+Sản phẩm:S003,Số lượng:4
+Sản phẩm:J001,Số lượng:1
 
-----Hóa đơn----
-Mã hóa đơn: O009
-Khách hàng: C009
-Sản phẩm: CL008
-Số lượng: 1
+----Đơn hàng----
+ID:O009
+Khách hàng:C009
+Sản phẩm:P003,Số lượng:2
+Sản phẩm:S001,Số lượng:1
+Sản phẩm:J003,Số lượng:1
 
-----Hóa đơn----
-Mã hóa đơn: O010
-Khách hàng: C010
-Sản phẩm: CL009
-Số lượng: 3
+----Đơn hàng----
+ID:O010
+Khách hàng:C010
+Sản phẩm:J004,Số lượng:1
+Sản phẩm:P001,Số lượng:1
+Sản phẩm:S002,Số lượng:2

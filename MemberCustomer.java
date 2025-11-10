@@ -11,4 +11,7 @@ public class MemberCustomer extends Customer {
         System.out.println("Số điện thoại:" + this.phone);
         System.out.println("Điểm tích lũy:" + this.loyaltyPoints);
     }
+    public int getLoyaltyPoints() {
+        return this.loyaltyPoints;
+    }
 }
