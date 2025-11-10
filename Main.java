@@ -3,8 +3,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
         System.setProperty("file.encoding", "UTF-8");
         Scanner sc = new Scanner(System.in, "UTF-8");
          
