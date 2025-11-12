@@ -1,4 +1,4 @@
-// Jacket.java - đã thêm getter methods
+
 public class Jacket extends Clothing implements Discountable {
     private final String color;
     private final String material;

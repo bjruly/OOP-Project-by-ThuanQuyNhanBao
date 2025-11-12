@@ -21,7 +21,7 @@ ID:P001
 Tên:Quần jean nam
 Giá:650000
 Chất liệu:Jean
-Size:E32
+Vòng eo:E32
 Chiều dài:34
 Thương hiệu:Levi's
 Tồn kho:15
@@ -31,7 +31,7 @@ ID:P002
 Tên:Quần kaki nữ
 Giá:720000
 Chất liệu:Kaki
-Size:E30
+Vòng eo:E30
 Chiều dài:32
 Thương hiệu:N&M
 Tồn kho:12
@@ -70,7 +70,7 @@ ID:P003
 Tên:Quần short thể thao
 Giá:390000
 Chất liệu:Polyester
-Size:E31
+Vòng eo:E31
 Chiều dài:28
 Thương hiệu:Adidas
 Tồn kho:25

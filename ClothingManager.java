@@ -48,7 +48,7 @@ public class ClothingManager implements chucnang<Clothing> {
     }
 
     public void loadFromFile() {
-        String filename = "resource/Clothing.txt";
+        String filename = System.getProperty("user.dir") + "/resource/Clothing.txt";
         list.clear();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
@@ -115,10 +115,10 @@ public class ClothingManager implements chucnang<Clothing> {
         }
     }
 
-    // Thêm phương thức xuất dữ liệu ra file input.txt
+    // Thêm phương thức xuất dữ liệu ra file output.txt
     public void exportToFile() {
-        String filename = "resource/Clothing_output.txt";
-        
+        String filename = System.getProperty("user.dir") + "/resource/Clothing_output.txt"
+        ;
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
             for (int i = 0; i < list.size(); i++) {
                 Clothing clothing = list.get(i);

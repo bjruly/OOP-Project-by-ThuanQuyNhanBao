@@ -22,21 +22,15 @@ public class Main {
             String choice = sc.nextLine();
 
             switch (choice) {
-                case "1":
-                    manageClothing(sc, clothingManager);
-                    break;
-                case "2":
-                    manageCustomer(sc, customerManager);
-                    break;
-                case "3":
-                    manageOrder(sc, orderManager, clothingManager, customerManager);
-                    break;
-                case "0":
+                case "1" -> manageClothing(sc, clothingManager);
+                case "2" -> manageCustomer(sc, customerManager);
+                case "3" -> manageOrder(sc, orderManager, clothingManager, customerManager);
+                case "0" -> {
                     System.out.println("Thoát chương trình.");
                     sc.close();
                     return;
-                default:
-                    System.out.println("Lựa chọn không hợp lệ!");
+                }
+                default -> System.out.println("Lựa chọn không hợp lệ!");
             }
         }
     }
@@ -54,38 +48,32 @@ public class Main {
             String c = sc.nextLine();
 
             switch (c) {
-                case "1":
-                    cm.displayAll();
-                    break;
+                case "1" -> cm.displayAll();
 
-                case "2":
-                    addClothing(sc, cm);
-                    break;
+                case "2" -> addClothing(sc, cm);
 
-                case "3":
+                case "3" -> {
                     System.out.print("Nhập ID sản phẩm cần xóa: ");
                     String delId = sc.nextLine();
                     if (cm.deleteById(delId)) System.out.println("Đã xóa sản phẩm!");
                     else System.out.println("Không tìm thấy sản phẩm.");
-                    break;
+                }
 
-                case "4":
+                case "4" -> {
                     System.out.print("Nhập ID sản phẩm cần tìm: ");
                     String searchId = sc.nextLine();
                     Clothing item = cm.searchById(searchId);
                     if (item != null) item.displayInfo();
                     else System.out.println("Không tìm thấy sản phẩm.");
-                    break;
+                }
 
-                case "5":
-                    updateClothing(sc, cm);
-                    break;
+                case "5" -> updateClothing(sc, cm);
 
-                case "0":
+                case "0" -> {
                     return;
+                }
 
-                default:
-                    System.out.println("Lựa chọn không hợp lệ!");
+                default -> System.out.println("Lựa chọn không hợp lệ!");
             }
         }
     }
@@ -225,11 +213,9 @@ public class Main {
             String c = sc.nextLine();
 
             switch (c) {
-                case "1":
-                    cm.displayAll();
-                    break;
+                case "1" -> cm.displayAll();
 
-                case "2":
+                case "2" -> {
                     System.out.print("Nhập ID: ");
                     String id = sc.nextLine();
                     System.out.print("Nhập số điện thoại: ");
@@ -244,32 +230,30 @@ public class Main {
                         cm.add(new Customer(id, phone));
                     }
                     System.out.println("Đã thêm khách hàng.");
-                    break;
+                }
 
-                case "3":
+                case "3" -> {
                     System.out.print("Nhập ID khách hàng cần xóa: ");
                     String delId = sc.nextLine();
                     if (cm.deleteById(delId)) System.out.println("Đã xóa khách hàng!");
                     else System.out.println("Không tìm thấy khách hàng.");
-                    break;
+                }
 
-                case "4":
+                case "4" -> {
                     System.out.print("Nhập ID khách hàng cần tìm: ");
                     String searchId = sc.nextLine();
                     Customer customer = cm.searchById(searchId);
                     if (customer != null) customer.displayCustomer();
                     else System.out.println("Không tìm thấy khách hàng.");
-                    break;
+                }
 
-                case "5":
-                    updateCustomer(sc, cm);
-                    break;
+                case "5" -> updateCustomer(sc, cm);
 
-                case "0":
+                case "0" -> {
                     return;
+                }
 
-                default:
-                    System.out.println("Lựa chọn không hợp lệ!");
+                default -> System.out.println("Lựa chọn không hợp lệ!");
             }
         }
     }
@@ -319,11 +303,9 @@ public class Main {
             String c = sc.nextLine();
 
             switch (c) {
-                case "1":
-                    om.displayAll();
-                    break;
+                case "1" -> om.displayAll();
 
-                case "2":
+                case "2" -> {
                     System.out.print("Nhập ID đơn hàng: ");
                     String orderId = sc.nextLine();
                     System.out.print("Nhập ID khách hàng: ");
@@ -346,32 +328,30 @@ public class Main {
                     order.addOrderDetail(item, qty);
                     om.add(order);
                     System.out.println("Đã thêm đơn hàng.");
-                    break;
+                }
 
-                case "3":
+                case "3" -> {
                     System.out.print("Nhập ID đơn hàng cần xóa: ");
                     String delId = sc.nextLine();
                     if (om.deleteById(delId)) System.out.println("Đã xóa đơn hàng!");
                     else System.out.println("Không tìm thấy đơn hàng.");
-                    break;
+                }
 
-                case "4":
+                case "4" -> {
                     System.out.print("Nhập ID đơn hàng cần tìm: ");
                     String searchId = sc.nextLine();
                     Order o = om.searchById(searchId);
                     if (o != null) o.displayOrder();
                     else System.out.println("Không tìm thấy đơn hàng.");
-                    break;
+                }
 
-                case "5":
-                    updateOrder(sc, om, cm, custM);
-                    break;
+                case "5" -> updateOrder(sc, om, cm, custM);
 
-                case "0":
+                case "0" -> {
                     return;
+                }
 
-                default:
-                    System.out.println("Lựa chọn không hợp lệ!");
+                default -> System.out.println("Lựa chọn không hợp lệ!");
             }
         }
     }

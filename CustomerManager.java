@@ -58,7 +58,7 @@ public class CustomerManager implements chucnang<Customer>
 
     // Phương thức đọc dữ liệu từ file - ĐÃ CẬP NHẬT ĐỂ HỖ TRỢ MemberCustomer
     public void loadFromFile() {
-        String filename = "resource/Customer.txt";
+        String filename = System.getProperty("user.dir") + "/resource/Customer.txt";
         list.clear();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
@@ -116,7 +116,7 @@ public class CustomerManager implements chucnang<Customer>
 
     // Phương thức xuất dữ liệu ra file 
     public void exportToFile() {
-        String filename = "resource/Customer_output.txt";
+        String filename = System.getProperty("user.dir") + "/resource/Customer_output.txt";
         
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
             for (int i = 0; i < list.size(); i++) {

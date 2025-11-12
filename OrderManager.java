@@ -58,7 +58,7 @@ public class OrderManager implements chucnang<Order> {
 
     // Phương thức đọc dữ liệu từ file
     public void loadFromFile() {
-        String filename = "resource/Order.txt";
+        String filename = System.getProperty("user.dir") + "/resource/Order.txt";
         list.clear();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
@@ -133,7 +133,7 @@ public class OrderManager implements chucnang<Order> {
 
     // Phương thức xuất dữ liệu ra file - ĐÃ SỬA DÙNG GETTER
     public void exportToFile() {
-        String filename = "resource/Order_output.txt";
+        String filename = System.getProperty("user.dir") + "/resource/Order_output.txt";
         
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
             for (int i = 0; i < list.size(); i++) {
