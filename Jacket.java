@@ -18,10 +18,11 @@ public class Jacket extends Clothing implements Discountable {
     public int getStock() { return stock; }
     
     // Thêm phương thức giảm tồn kho
-    public void reduceStock(int quantity) {
+    public Jacket reduceStock(int quantity) {
         if (quantity > 0 && this.stock >= quantity) {
             this.stock -= quantity;
         }
+        return this;
     }
     
     // Thêm phương thức thiết lập tồn kho
