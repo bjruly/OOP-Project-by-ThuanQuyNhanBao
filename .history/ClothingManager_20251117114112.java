@@ -1,0 +1,168 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ClothingManager implements chucnang<Clothing> {
+    private final List<Clothing> list = new ArrayList<>();
+
+    @Override
+    public void add(Clothing item) {
+        list.add(item);
+    }
+
+    @Override
+    public Clothing searchById(String id) {
+        for (Clothing cl : list) {
+            if (cl.getId().equals(id)) {
+                return cl;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public boolean deleteById(String id) {
+        return list.removeIf(cl -> cl.getId().equals(id));
+    }
+
+    @Override
+    public void displayAll() {
+        for (Clothing cl : list) {
+            cl.displayInfo();
+        }
+    }
+
+    @Override
+    public boolean update(String id, Clothing newItem) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getId().equals(id)) {
+                list.set(i, newItem);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void loadFromFile() {
+        String filename = System.getProperty("user.dir") + "/resource/Clothing.txt";
+        list.clear();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            String id = null, name = null, color = null, material = null, size = null;
+            String brand = null, gender = null;
+            int stock = 0, waist = 0, length = 0;
+            double price = 0;
+
+            while ((line = reader.readLine()) != null) {
+                line = line.trim();
+                if (line.isEmpty()) continue;
+
+                if (line.startsWith("ID:")) {
+                    id = line.substring(3).trim();
+                } else if (line.startsWith("Tên:")) {
+                    name = line.substring(4).trim();
+                } else if (line.startsWith("Giá:")) {
+                    try {
+                        price = Double.parseDouble(line.substring(4).trim());
+                    } catch (NumberFormatException e) {
+                        price = 0;
+                    }
+                } else if (line.startsWith("Màu:")) {
+                    color = line.substring(4).trim();
+                } else if (line.startsWith("Chất liệu:")) {
+                    material = line.substring(10).trim();
+                } else if (line.startsWith("Size:")) {
+                    size = line.substring(5).trim();
+                } else if (line.startsWith("Tồn kho:")) {
+                    stock = Integer.parseInt(line.substring(8).trim());
+                } else if (line.startsWith("Thương hiệu:")) {
+                    brand = line.substring(13).trim();
+                } else if (line.startsWith("Giới tính:")) {
+                    gender = line.substring(11).trim();
+                } else if (line.startsWith("Chiều dài:")) {
+                    length = Integer.parseInt(line.substring(11).trim());
+                } else if (line.startsWith("E")) { // ví dụ: E32
+                    try {
+                        waist = Integer.parseInt(line.substring(1).trim());
+                    } catch (NumberFormatException e) {
+                        waist = 0;
+                    }
+                } else if (line.startsWith("----Sản phẩm----")) {
+                    if (id != null && name != null) {
+                        Clothing item = createClothingObject(id, name, price, color, material, size, stock, brand, gender, waist, length);
+                        if (item != null) list.add(item);
+                    }
+                    // reset
+                    id = name = color = material = size = brand = gender = null;
+                    stock = waist = length = 0;
+                    price = 0;
+                }
+            }
+
+            if (id != null && name != null) {
+                Clothing item = createClothingObject(id, name, price, color, material, size, stock, brand, gender, waist, length);
+                if (item != null) list.add(item);
+            }
+
+            System.out.println("✅ Đã nạp dữ liệu từ Clothing.txt (" + list.size() + " sản phẩm)");
+        } catch (IOException e) {
+            System.err.println("❌ Lỗi đọc file Clothing.txt: " + e.getMessage());
+        }
+    }
+
+    // Thêm phương thức xuất dữ liệu ra file output.txt
+    public void exportToFile() {
+        String filename = System.getProperty("user.dir") + "/resource/Clothing_output.txt"
+        ;
+        try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
+            for (int i = 0; i < list.size(); i++) {
+                Clothing clothing = list.get(i);
+                writer.println("----Sản phẩm----");
+                writer.println("ID:" + clothing.getId());
+                writer.println("Tên:" + clothing.getName());
+                writer.println("Giá:" + (int)clothing.getPrice()); // Làm tròn thành số nguyên
+                // Ghi thông tin cụ thể cho từng loại quần áo
+                switch (clothing) {
+                    case Jacket jacket -> {
+                        writer.println("Màu:" + jacket.getColor());
+                        writer.println("Chất liệu:" + jacket.getMaterial());
+                        writer.println("Size:" + jacket.getSize());
+                        writer.println("Tồn kho:" + jacket.getStock());
+                    }
+                    case Pants pants -> {
+                        writer.println("Chất liệu:" + pants.getMaterial());
+                        writer.println("Size:E" + pants.getWaist());
+                        writer.println("Chiều dài:" + pants.getLength());
+                        writer.println("Thương hiệu:" + pants.getBrand());
+                        writer.println("Tồn kho:" + pants.getStock());
+                    }
+                    case Shirt shirt -> {
+                        writer.println("Size:" + shirt.getSize());
+                        writer.println("Màu:" + shirt.getColor());
+                        writer.println("Thương hiệu:" + shirt.getBrand());
+                        writer.println("Giới tính:" + shirt.getGender());
+                        writer.println("Tồn kho:" + shirt.getStock());
+                    }
+                    default -> {
+                    }
+                }
+                
+                // Thêm dòng trống giữa các sản phẩm (trừ sản phẩm cuối cùng)
+                if (i < list.size() - 1) {
+                    writer.println();
+                }
+            }
+            
+            System.out.println("✅ Đã xuất dữ liệu ra file Clothing_output.txt (" + list.size() + " sản phẩm)");
+        } catch (IOException e) {
+            System.err.println("❌ Lỗi ghi file Clothing__output.txt: " + e.getMessage());
+        }
+    }
+
+   
+}

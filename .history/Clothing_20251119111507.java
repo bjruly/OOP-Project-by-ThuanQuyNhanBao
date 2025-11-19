@@ -1,5 +1,5 @@
 
-public abstract class Clothing { // lớp con dc truy xuất protected và public cua lop cha (clothing la lop cha va pant la lop con ke thua)
+public abstract class Clothing { // lớp con dc truy xuất protected và public cua lop cha (clothing la lop cha va pant)
     protected String id;
     protected String name;
     protected double price;

@@ -137,9 +137,9 @@ public class OrderManager implements chucnang<Order> {
                 writer.println("----Đơn hàng----");
                 writer.println("ID:" + order.getOrderId());
                 writer.println("Khách hàng:" + order.getCustomer().getCustomerId());
+                
                 // Ghi chi tiết sản phẩm
-                for (OrderDetail detail : order.getDetails())
-                {
+                for (OrderDetail detail : order.getDetails()) {
                     writer.println("Sản phẩm:" + detail.getItem().getId() + ",Số lượng:" + detail.getQuantity());
                 }
                 

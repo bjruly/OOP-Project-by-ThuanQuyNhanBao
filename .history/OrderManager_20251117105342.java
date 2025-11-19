@@ -85,18 +85,22 @@ public class OrderManager implements chucnang<Order> {
                     productLines.clear();
                 }
             }
+
             // Thêm đơn hàng cuối cùng nếu có
             if (orderId != null && customerId != null) {
                 createAndAddOrder(orderId, customerId, productLines); // phai tạo bên dưới 
             }
 
             System.out.println("✅ Đã nạp dữ liệu từ Order.txt (" + list.size() + " đơn hàng)");
-        }       
+        } 
+        
+        
         catch (IOException e)
-        {
+         {
             System.err.println("❌ Lỗi đọc file Order.txt: " + e.getMessage());
         }
     }
+
     // Phương thức tạo và thêm đơn hàng
     private void createAndAddOrder(String orderId, String customerId, List<String> productLines) {
         // Tìm khách hàng
@@ -137,9 +141,9 @@ public class OrderManager implements chucnang<Order> {
                 writer.println("----Đơn hàng----");
                 writer.println("ID:" + order.getOrderId());
                 writer.println("Khách hàng:" + order.getCustomer().getCustomerId());
+                
                 // Ghi chi tiết sản phẩm
-                for (OrderDetail detail : order.getDetails())
-                {
+                for (OrderDetail detail : order.getDetails()) {
                     writer.println("Sản phẩm:" + detail.getItem().getId() + ",Số lượng:" + detail.getQuantity());
                 }
                 
@@ -147,7 +151,8 @@ public class OrderManager implements chucnang<Order> {
                 if (i < list.size() - 1) {
                     writer.println();
                 }
-            }           
+            }
+            
             System.out.println("✅ Đã xuất dữ liệu ra file Order_output.txt (" + list.size() + " đơn hàng)");
         } catch (IOException e) {
             System.err.println("❌ Lỗi ghi file Order_output.txt: " + e.getMessage());

@@ -1,5 +1,5 @@
 
-public class Pants extends Clothing implements Discountable { // triển khai interface
+public class Pants extends Clothing implements Discountable { // tre
     private final String material;
     private final int waistSize;
     private final int length;
@@ -14,7 +14,7 @@ public class Pants extends Clothing implements Discountable { // triển khai in
         this.stock = stock;
     }
     
-    public String getMaterial() { return material; } 
+    public String getMaterial() { return material; }
     public int getWaist() { return waistSize; }
     public int getLength() { return length; }
     public String getBrand() { return brand; }

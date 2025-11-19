@@ -11,7 +11,7 @@ public class Main {
         clothingManager.loadFromFile();
         customerManager.loadFromFile();
         orderManager.loadFromFile();
-        
+
         while (true) {
             System.out.println("===== QUẢN LÝ SHOP QUẦN ÁO =====");
             System.out.println("1. Quản lý sản phẩm");
@@ -329,7 +329,7 @@ public class Main {
                     om.add(order);
                     System.out.println("Đã thêm đơn hàng.");
                 }
-
+                
                 case "3" -> {
                     System.out.print("Nhập ID đơn hàng cần xóa: ");
                     String delId = sc.nextLine();

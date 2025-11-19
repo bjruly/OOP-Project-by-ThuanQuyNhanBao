@@ -7,6 +7,7 @@ public class Customer {
         this.customerId = customerId;
         this.phone = phone;
     }
+    
     public void displayCustomer(){
         System.out.println("----Khách Hàng----");
         System.out.println("Id:" + this.customerId);

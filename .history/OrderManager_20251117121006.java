@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-
 public class OrderManager implements chucnang<Order> {
     private final List<Order> list = new ArrayList<>();
     private final ClothingManager clothingManager;
@@ -142,7 +141,6 @@ public class OrderManager implements chucnang<Order> {
                 {
                     writer.println("Sản phẩm:" + detail.getItem().getId() + ",Số lượng:" + detail.getQuantity());
                 }
-                
                 // Thêm dòng trống giữa các đơn hàng (trừ đơn hàng cuối cùng)
                 if (i < list.size() - 1) {
                     writer.println();

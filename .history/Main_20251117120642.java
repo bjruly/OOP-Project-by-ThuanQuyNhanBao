@@ -11,7 +11,6 @@ public class Main {
         clothingManager.loadFromFile();
         customerManager.loadFromFile();
         orderManager.loadFromFile();
-        
         while (true) {
             System.out.println("===== QUẢN LÝ SHOP QUẦN ÁO =====");
             System.out.println("1. Quản lý sản phẩm");
