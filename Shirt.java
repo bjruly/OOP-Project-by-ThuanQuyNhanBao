@@ -1,10 +1,10 @@
-
-public class Shirt extends Clothing implements Discountable{
+public class Shirt extends Clothing implements Discountable {
     private final String size;
     private final String color;
     private final String brand;
     private final String gender;
-    private final int stock;
+    private int stock; // Bỏ final để có thể thay đổi
+    
     public Shirt(String id, String name, double price, String size, String color, String brand, String gender, int stock) {
         super(id, name, price);
         this.size = size;
@@ -21,6 +21,20 @@ public class Shirt extends Clothing implements Discountable{
     public String getGender() { return gender; }
     public int getStock() { return stock; }
     
+    // Thêm phương thức giảm tồn kho
+    public void reduceStock(int quantity) {
+        if (quantity > 0 && this.stock >= quantity) {
+            this.stock -= quantity;
+        }
+    }
+    
+    // Thêm phương thức thiết lập tồn kho
+    public void setStock(int stock) {
+        if (stock >= 0) {
+            this.stock = stock;
+        }
+    }
+    
     @Override
     public void displayInfo(){
         System.out.println("----Áo Sơ Mi----");
@@ -33,6 +47,7 @@ public class Shirt extends Clothing implements Discountable{
         System.out.println("Giới tính:" + this.gender);
         System.out.println("Tồn kho:" + this.stock);
     }
+    
     @Override
     public double getDiscountedPrice(double percent){
         return this.price * (1.0 - (percent / 100.0));

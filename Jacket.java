@@ -1,9 +1,9 @@
-
 public class Jacket extends Clothing implements Discountable {
     private final String color;
     private final String material;
     private final String size;
-    private final int stock;
+    private int stock; // Bỏ final để có thể thay đổi
+    
     public Jacket(String id, String name, double price, String color, String material, String size, int stock){
         super(id, name, price);
         this.color = color;
@@ -11,10 +11,25 @@ public class Jacket extends Clothing implements Discountable {
         this.size = size;
         this.stock = stock;
     }
+    
     public String getColor() { return color; }
     public String getMaterial() { return material; }
     public String getSize() { return size; }
     public int getStock() { return stock; }
+    
+    // Thêm phương thức giảm tồn kho
+    public void reduceStock(int quantity) {
+        if (quantity > 0 && this.stock >= quantity) {
+            this.stock -= quantity;
+        }
+    }
+    
+    // Thêm phương thức thiết lập tồn kho
+    public void setStock(int stock) {
+        if (stock >= 0) {
+            this.stock = stock;
+        }
+    }
     
     @Override
     public void displayInfo(){
@@ -27,6 +42,7 @@ public class Jacket extends Clothing implements Discountable {
         System.out.println("Size:" + this.size);
         System.out.println("Tồn kho:" + this.stock);
     }
+    
     @Override
     public double getDiscountedPrice(double percent){
         System.out.println("Sản phẩm này không áp dụng giảm giá");
