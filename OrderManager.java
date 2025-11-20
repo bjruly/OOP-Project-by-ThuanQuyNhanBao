@@ -6,54 +6,56 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderManager implements chucnang<Order> {
+public class OrderManager implements chucnang<Order>
+{
     private final List<Order> list = new ArrayList<>();
-    private final ClothingManager clothingManager;
     private final CustomerManager customerManager;
-
-    // Constructor để truyền dependencies
-    public OrderManager(ClothingManager clothingManager, CustomerManager customerManager) {
-        this.clothingManager = clothingManager;
+    private final ClothingManager clothingManager;
+    public OrderManager(ClothingManager clothingManager, CustomerManager customerManager)
+    {
         this.customerManager = customerManager;
+        this.clothingManager = clothingManager;
     }
-
     @Override
-    public void add(Order order) {
+    public void add(Order order)
+    {
         list.add(order);
     }
-
     @Override
-    public Order searchById(String id) {
-        for (Order o : list) {
-            if (o.getOrderId().equals(id)) {
+    public Order searchById(String id)
+    {
+        for (Order o : list)
+        {
+            if (o.getOrderId().equals(id))
                 return o;
-            }
         }
         return null;
     }
-
     @Override
-    public boolean deleteById(String id) {
+    public boolean deleteById(String id)
+    {
         return list.removeIf(o -> o.getOrderId().equals(id));
     }
-
     @Override
-    public void displayAll() {
-        for (Order o : list) {
-            o.displayOrder();
-            System.out.println(); // Thêm dòng trống giữa các đơn hàng
-        }
-    }
-
-    @Override
-    public boolean update(String id, Order newItem) {
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getOrderId().equals(id)) {
+    public boolean update(String id, Order newItem)
+    {
+        for (int i = 0; i < list.size(); ++i)
+        {
+            if (list.get(i).getOrderId().equals(id))
+            {
                 list.set(i, newItem);
                 return true;
             }
         }
         return false;
+    }
+    public void displayAll()
+    {
+        for (Order o : list)
+        {
+            o.displayOrder();
+            System.out.println();
+        }
     }
 
     // Phương thức đọc dữ liệu từ file

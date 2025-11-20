@@ -8,6 +8,8 @@ public abstract class Clothing { // lớp con dc truy xuất protected và publi
         this.id = id;
         this.name = name;
         this.price = price;
+
+
         totalProducts++;
     }
     public abstract void displayInfo();

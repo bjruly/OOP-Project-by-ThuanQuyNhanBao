@@ -1,0 +1,44 @@
+----Khách hàng----
+ID:C001
+SĐT:0912345678
+
+----Khách hàng----
+ID:C002
+SĐT:0923456789
+Điểm tích lũy:150
+
+----Khách hàng----
+ID:C003
+SĐT:0934567890
+
+----Khách hàng----
+ID:C004
+SĐT:0945678901
+Điểm tích lũy:75
+
+----Khách hàng----
+ID:C005
+SĐT:0956789012
+
+----Khách hàng----
+ID:C006
+SĐT:0967890123
+Điểm tích lũy:200
+
+----Khách hàng----
+ID:C007
+SĐT:0978901234
+
+----Khách hàng----
+ID:C008
+SĐT:0989012345
+Điểm tích lũy:300
+
+----Khách hàng----
+ID:C009
+SĐT:0990123456
+
+----Khách hàng----
+ID:C010
+SĐT:0901234567
+Điểm tích lũy:125

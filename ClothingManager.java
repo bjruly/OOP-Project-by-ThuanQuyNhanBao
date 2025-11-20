@@ -6,45 +6,51 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClothingManager implements chucnang<Clothing> {
+public class ClothingManager implements chucnang<Clothing>
+{
     private final List<Clothing> list = new ArrayList<>();
-
     @Override
-    public void add(Clothing item) {
-        list.add(item);
+    public void add(Clothing  clothing)
+    {
+        list.add(clothing);
     }
-
     @Override
-    public Clothing searchById(String id) {
-        for (Clothing cl : list) {
-            if (cl.getId().equals(id)) {
+    public Clothing searchById(String id)
+    {
+        for (Clothing cl : list)
+        {
+            if (cl.getId().equals(id))
+            {
                 return cl;
             }
         }
         return null;
     }
-
     @Override
-    public boolean deleteById(String id) {
+    public boolean deleteById(String id)
+    {
         return list.removeIf(cl -> cl.getId().equals(id));
     }
-
     @Override
-    public void displayAll() {
-        for (Clothing cl : list) {
-            cl.displayInfo();
-        }
-    }
-
-    @Override
-    public boolean update(String id, Clothing newItem) {
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getId().equals(id)) {
+    public boolean update(String id, Clothing newItem)
+    {
+        for (int i = 0; i < list.size(); ++i)
+        {
+            if (list.get(i).getId().equals(id))
+            {
                 list.set(i, newItem);
                 return true;
             }
         }
         return false;
+    }
+    @Override
+    public void displayAll()
+    {
+        for (Clothing cl : list) {
+            cl.displayInfo();
+            System.out.println();
+        }
     }
 
     public void loadFromFile() {

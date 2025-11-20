@@ -71,8 +71,8 @@ public class Main {
                 case "5" -> updateClothing(sc, cm);
 
                 case "6" -> {
-                   cm.exportToFile();
-                   System.out.println("✅ Đã xuất danh sách sản phẩm ra file Clothing_output.txt");
+                    cm.exportToFile();
+                    System.out.println("✅ Đã xuất danh sách sản phẩm ra file Clothing_output.txt");
                 }
 
                 case "0" -> {
@@ -419,32 +419,40 @@ public class Main {
                     Customer cust = custM.searchById(custId);
                     if (cust == null) {
                         System.out.println("Không tìm thấy khách hàng.");
-                        break;                        
-                    }
-                        
-                    Order order = new Order(orderId, cust);
-                        
-                        // Thêm sản phẩm vào đơn hàng
-                    System.out.print("Nhập ID sản phẩm: ");
-                    String prodId = sc.nextLine();
-                    Clothing item = cm.searchById(prodId);
-                    if (item == null) {
-                        System.out.println("Không tìm thấy sản phẩm.");
                         break;
                     }
-                        
-                    System.out.print("Nhập số lượng: ");
-                    int qty = Integer.parseInt(sc.nextLine());
-                        
-                    switch (item) {
-                        case Jacket jacket -> jacket.reduceStock(qty);
-                        case Pants pants -> pants.reduceStock(qty);
-                        case Shirt shirt -> shirt.reduceStock(qty);
-                        default -> {
+
+                    Order order = new Order(orderId, cust);
+                    while (true) {
+                        System.out.println("\n--- THÊM SẢN PHẨM VÀO ĐƠN HÀNG ---");
+                        System.out.print("Nhập ID sản phẩm (hoặc 'done' để kết thúc): ");
+                        String prodId = sc.nextLine();
+
+                        if (prodId.equalsIgnoreCase("done"))
+                            break;
+
+                        // Thêm sản phẩm vào đơn hàng
+                        Clothing item = cm.searchById(prodId);
+                        if (item == null) {
+                            System.out.println("Không tìm thấy sản phẩm.");
+                            break;
                         }
+
+
+                        System.out.print("Nhập số lượng: ");
+                        int qty = Integer.parseInt(sc.nextLine());
+
+                        switch (item) {
+                            case Jacket jacket -> jacket.reduceStock(qty);
+                            case Pants pants -> pants.reduceStock(qty);
+                            case Shirt shirt -> shirt.reduceStock(qty);
+                            default -> {
+                            }
+                        }
+                        order.addOrderDetail(item, qty);
                     }
-                        
-                    order.addOrderDetail(item, qty);
+
+
                     om.add(order);
                     System.out.println("✅ Đã thêm đơn hàng và giảm tồn kho!");
                 }
